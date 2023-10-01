@@ -17,7 +17,14 @@ namespace Lab
         }
 		public static void Start()
 		{
-            while(true)
+            if (menuItems.Count == 0)
+            {
+                Console.Write("Menu items do not exists.\n" +
+					"Press any key to continue: ");
+				Console.ReadKey();
+                return;
+            }
+            while (true)
 			{
                 Menu.Show();
 				menuItems[Menu.GetMenuItem()].Execute();
@@ -33,8 +40,8 @@ namespace Lab
 			for (int i = 0; i < menuItems.Count; i++)
 			{ 
 				Console.WriteLine($"[{i}] " + menuItems[i].GetInfo());
-            }
-            Console.Write("\nSelect menu item: ");
+			}
+			Console.Write("\nSelect menu item: ");
         }
 		// получение пункта меню
 		static int GetMenuItem()
