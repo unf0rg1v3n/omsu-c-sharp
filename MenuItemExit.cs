@@ -14,7 +14,7 @@ namespace Lab
         }
         public override void Execute()
         {
-            Menu.key = false;
+            Environment.Exit(0);
 
             return;
         }

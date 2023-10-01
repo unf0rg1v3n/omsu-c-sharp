@@ -11,20 +11,20 @@ namespace Lab
 	static class Menu
 	{
 		static List<MenuItemCore> menuItems = new List<MenuItemCore>();
-		public static bool key = true; // ключ выхода из программы
 		static Menu()
 		{
 			menuItems.Add(new MenuItemExit());
         }
 		public static void Start()
 		{
-            key = true;
-            do
+            while(true)
 			{
                 Menu.Show();
 				menuItems[Menu.GetMenuItem()].Execute();
+				Console.Write("\nPress any key to continue: ");
+				Console.ReadKey();
 				Console.Clear();
-			} while (key);
+			}
 
         }
 		// Вывод каждого пункта меню в консоль
@@ -51,5 +51,8 @@ namespace Lab
                 return res;
             }
 		}
+		public static void Add(MenuItemCore item) { menuItems.Add(item); }
+		public static void Remove(MenuItemCore item) {  menuItems.Remove(item); }
+		public static void Clear() { menuItems.Clear();  }
 	}
 }

@@ -11,15 +11,9 @@ namespace Lab
 	{
 		static void Main(string[] args)
 		{
+			Menu.Add(new MenuItemHelloWorld());
+			Menu.Add(new MenuItemCalc());
 			Menu.Start();
-			//if (uint.TryParse(Console.ReadLine(), out uint a))
-			//{
-			//	Console.WriteLine("true");
-			//} else
-			//{
-   //             Console.WriteLine("false");
-   //         }
-			//Console.ReadKey();
 		}
 	}
 }
