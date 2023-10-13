@@ -9,11 +9,13 @@ namespace Lab
 {
 	internal class Program
 	{
-		static void Main(string[] args)
+	    static void Main(string[] args)
 		{
-			Menu.Add(new MenuItemHelloWorld());
-			Menu.Add(new MenuItemCalc());
-			Menu.Start();
-		}
-	}
+            Menu.Add(new MenuItemHelloWorld());
+            Menu.Add(new MenuItemCalc());
+            Menu.Add(new MenuItemRecursiveCalc());
+            Menu.Start();
+        }
+        
+    }
 }

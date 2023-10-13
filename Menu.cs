@@ -15,22 +15,27 @@ namespace Lab
 		{
 			menuItems.Add(new MenuItemExit());
         }
+		public static int MenuItems
+		{
+			get { return menuItems.Count; }
+		}
 		public static void Start()
 		{
-            if (menuItems.Count == 0)
-            {
-                Console.Write("Menu items do not exists.\n" +
-					"Press any key to continue: ");
-				Console.ReadKey();
-                return;
-            }
-            while (true)
+            if (menuItems.Count == 0) { throw new MenuItemException(); }
+			try
 			{
-                Menu.Show();
-				menuItems[Menu.GetMenuItem()].Execute();
-				Console.Write("\nPress any key to continue: ");
-				Console.ReadKey();
-				Console.Clear();
+				while (true)
+				{
+					Menu.Show();
+					menuItems[Menu.GetMenuItem()].Execute();
+					Console.Write("\nPress any key to continue: ");
+					Console.ReadKey();
+					Console.Clear();
+				}
+			}
+			catch (ExitException)
+			{
+				return;
 			}
 
         }
@@ -41,15 +46,14 @@ namespace Lab
 			{ 
 				Console.WriteLine($"[{i}] " + menuItems[i].GetInfo());
 			}
-			Console.Write("\nSelect menu item: ");
         }
 		// получение пункта меню
 		static int GetMenuItem()
 		{
-			int res;
-			while (true)
+            Console.Write("\nSelect menu item: ");
+            while (true)
 			{
-				res = ConsoleIOUtils.GetInt();
+				int res = IOUtils.GetInt();
 				if (res < 0 || res >= menuItems.Count)
 				{
                     Console.WriteLine("Enter correct value: ");

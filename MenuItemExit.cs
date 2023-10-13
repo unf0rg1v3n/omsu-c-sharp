@@ -14,9 +14,7 @@ namespace Lab
         }
         public override void Execute()
         {
-            Environment.Exit(0);
-
-            return;
+            throw new ExitException();
         }
     }
 }

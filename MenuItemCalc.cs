@@ -16,11 +16,11 @@ namespace Lab
         {
             double x, y, z;
             Console.Write("Enter x: ");
-            x = ConsoleIOUtils.GetDouble();
+            x = IOUtils.GetDouble();
             Console.Write("Enter y: ");
-            y = ConsoleIOUtils.GetDouble();
+            y = IOUtils.GetDouble();
             Console.Write("Enter z: ");
-            while ((z = ConsoleIOUtils.GetDouble()) == 0) { Console.Write("Enter correct value: "); }
+            while ((z = IOUtils.GetDouble()) == 0) { Console.Write("Enter correct value: "); }
             Console.WriteLine("Result: " + x * y % z);
         }
     }
