@@ -14,6 +14,7 @@ namespace Lab
             Menu.Add(new MenuItemHelloWorld());
             Menu.Add(new MenuItemCalc());
             Menu.Add(new MenuItemRecursiveCalc());
+            Menu.Add(new MenuItemStrings());
             Menu.Start();
         }
         

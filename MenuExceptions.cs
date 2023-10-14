@@ -14,4 +14,8 @@ namespace Lab
     {
         public MenuItemException() : base() { }
     }
+    class ValidationException : Exception
+    {
+        public ValidationException(string Message) : base(Message) { }
+    }
 }
