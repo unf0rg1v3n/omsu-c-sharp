@@ -39,15 +39,6 @@ namespace Lab
             Console.Write($"\n{str2} - ");
             CheckString(str2);
 
-            //Console.WriteLine("\nString is IP adress:" +
-            //    $"\n\t{str1} - {IsIP(str1)}" +
-            //    $"\n\t{str2} - {IsIP(str2)}");
-            //Console.WriteLine("\nString is email adress:" +
-            //    $"\n\t{str1} - {IsEmail(str1)}" +
-            //    $"\n\t{str2} - {IsEmail(str2)}");
-            //Console.WriteLine("\nString is phone number:" +
-            //    $"\n\t{str1} - {IsPhoneNumber(str1)}" +
-            //    $"\n\t{str2} - {IsPhoneNumber(str2)}");
         }
         void Init()
         {
