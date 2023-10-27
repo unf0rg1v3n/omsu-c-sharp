@@ -45,7 +45,7 @@ namespace Lab
         }
         public static string GetString()
         {
-            string res = Console.ReadLine() ?? "";
+            string res = Console.ReadLine();
             return res;
         }
     

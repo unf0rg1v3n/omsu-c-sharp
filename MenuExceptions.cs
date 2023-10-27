@@ -10,10 +10,6 @@ namespace Lab
     {
         public ExitException() : base() { }
     }
-    internal class MenuItemException : Exception
-    {
-        public MenuItemException() : base() { }
-    }
     class ValidationException : Exception
     {
         public ValidationException(string Message) : base(Message) { }

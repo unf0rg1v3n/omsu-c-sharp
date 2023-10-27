@@ -21,7 +21,6 @@ namespace Lab
 		}
 		public static void Start()
 		{
-            if (menuItems.Count == 0) { throw new MenuItemException(); }
 			try
 			{
 				while (true)
@@ -37,7 +36,6 @@ namespace Lab
 			{
 				return;
 			}
-
         }
 		// Вывод каждого пункта меню в консоль
 		static void Show()
@@ -53,13 +51,13 @@ namespace Lab
             Console.Write("\nSelect menu item: ");
             while (true)
 			{
-				int res = IOUtils.GetInt();
-				if (res < 0 || res >= menuItems.Count)
+				int menuItem = IOUtils.GetInt();
+				if (menuItem < 0 || menuItem >= menuItems.Count)
 				{
                     Console.WriteLine("Enter correct value: ");
 					continue;
                 }
-                return res;
+                return menuItem;
             }
 		}
 		public static void Add(MenuItemCore item) { menuItems.Add(item); }
